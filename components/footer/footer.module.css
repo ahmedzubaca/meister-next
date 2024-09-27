@@ -1,0 +1,72 @@
+.futerContainer {  
+  display: flex;
+  flex-direction: column;  
+  background-color: rgb(24, 24, 24);
+  padding: 4vh 10vw 6vh;    
+}
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+}
+.menuContainer > h4, .menuContainer > p, .menuContainer > a {  
+  text-align: left;  
+  color: rgb(150, 150, 150);
+  font-size: 1rem; 
+}
+.menuContainer > h4 {
+  padding-top: 3vh;  
+  padding-bottom: 2vh;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.menuContainer > a {  
+  margin-bottom: 1vh;
+  text-decoration: none;   
+}
+.scrollToTopDiv { 
+  padding-top: 2vh; 
+  text-align: end;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.goToTopIcon {
+  color:rgb(141, 111, 118)
+}
+.disclaimer {
+  margin-top: 5vh;
+  border-top: darkgray 1px solid;
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgb(150, 150, 150);
+}
+@media screen and (min-width: 500px) {
+  .futerContainer {       
+    padding: 3vh 5vw 15vh;       
+  }
+  .futerContentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;        
+  } 
+  .menuContainer {
+    width: 40vw;        
+  } 
+  .menuContainer > h4, .menuContainer > p, .menuContainer > a {  
+    text-align: left;  
+    color: rgb(150, 150, 150);
+    font-size: 0.9rem; 
+  }
+  .disclaimer {    
+    width: 70%;
+    text-align: center;
+    margin: auto; 
+    margin-top: 5vh;
+  }
+}
+@media screen and (min-width: 800px) {  
+  .menuContainer {
+    width: 20vw;
+    margin-top: 3vh;    
+  }
+}

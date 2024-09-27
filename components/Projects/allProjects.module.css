@@ -1,0 +1,79 @@
+.pageContainer {
+  width: 100%;    
+  display: grid;          
+  background: linear-gradient(to right,rgba(110, 110, 110, 0.7) 36%, rgba(101, 70, 70, 0.7) 36%, rgba(101, 70, 70, 0.7) 64%, rgba(110, 110, 110, 0.7) 64%);    
+}
+.pageContainerLandscape {        
+  background: linear-gradient(to right, rgba(101, 70, 70, 0.7) 50%, rgba(110, 110, 110, 0.7) 50%);    
+}  
+.title{    
+  width: 100%;
+  margin-top: 7vh;    
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;    
+  text-align: center;    
+}  
+.titleLandscape { 
+  padding-top: 10vh;
+  font-weight: 500;    
+}
+.projectsCardsContainer { 
+  position: relative;
+  display: grid;   
+  margin-top: 5vh;
+  width: 100%;    
+  min-height: auto;
+  row-gap: 3vh;
+  grid-template-columns: repeat(3, 28%);   
+  justify-content: space-around; 
+  margin-bottom: 3vh;
+  box-sizing: border-box;   
+}  
+.projectsCardsContainerLandscape {
+  margin-top: 7vh;     
+  grid-template-columns: repeat(2, 45%);     
+} 
+
+@media screen and (max-width: 1100px) {
+  .title {
+    font-size: 1.6rem;
+  }     
+} 
+
+@media screen and (max-width: 900px) {
+  .pageContainer {        
+    background: linear-gradient(to right,rgba(110, 110, 110, 0.7) 34%, rgba(101, 70, 70, 0.7) 34%, rgba(101, 70, 70, 0.7) 66%, rgba(110, 110, 110, 0.7) 66%);
+  } 
+  .title {    
+    font-size: 1.4rem;      
+    margin-top: 5vh;     
+  }   
+  .projectsCardsContainer {
+    grid-template-columns: repeat(3, 32%);
+  }   
+}
+
+@media screen and (max-width: 800px) {
+  .pageContainer {        
+    background: linear-gradient(to right, rgba(101, 70, 70, 0.7) 50%, rgba(110, 110, 110, 0.7) 50%);
+  }    
+  .projectsCardsContainer {
+    grid-template-columns: repeat(2, 40%);
+    justify-content: space-evenly;     
+  }    
+}
+@media screen and (max-width: 499px) {
+  .pageContainer {        
+    background: rgba(101, 70, 70, 0.7);
+  }
+  .title {
+    margin-top: 7vh;
+    font-size: 1.8rem;
+    font-weight: 600;
+    box-sizing: border-box;     
+  }    
+  .projectsCardsContainer {      
+    grid-template-columns: 100%;         
+  }
+}

@@ -1,0 +1,22 @@
+.textContainer{  
+  padding-left: 5vw;
+  padding-right: 3vw;
+  box-sizing: border-box;  
+}
+.number{  
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgb(128, 124, 124);
+  max-height: 3.5rem;     
+}
+.text{  
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;  
+}
+
+@media screen and (min-width: 500px) {
+  .text{  
+    font-size: 2.3rem; 
+  }
+}
