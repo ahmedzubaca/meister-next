@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import styles from '../cssModules/FbInstagram.module.css'
+import styles from '../cssModules/fbInstagram.module.css'
 
 export default function FbInstagram () {
   
