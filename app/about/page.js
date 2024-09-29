@@ -4,6 +4,10 @@ import PageTransition from '@/lib/animations/pageTransition';
 import MoveDownUpAnimation from '@/lib/animations/moveDownAnimation';
 import styles from './about.module.css';
 
+export const metadata = {
+  title: 'O nama'  
+};
+
 export default function About() {
   
   return (
