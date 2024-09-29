@@ -3,7 +3,7 @@ const db = sql('projects.db');
 
 const projects = [
   { 
-    projectId: 'fasada',    
+    projectId: 'p1-fasada-potocari',    
     title: "FASADA POTOČARI",
     location: "Potočari",
     investor: "TIKA",
@@ -12,7 +12,7 @@ const projects = [
     imageUrl: '/projectsImages/p1_fasadaPotocari/p1_cover.webp'
   },
   { 
-    projectId: 'fasada',    
+    projectId: 'p1-fasada-potocari',    
     title: "FASADA POTOČARI",
     location: "Potočari",
     investor: "TIKA",
@@ -21,7 +21,7 @@ const projects = [
     imageUrl: '/projectsImages/p1_fasadaPotocari/p11.webp'
   }, 
   { 
-    projectId: 'fasada',    
+    projectId: 'p1-fasada-potocari',    
     title: "FASADA POTOČARI",
     location: "Potočari",
     investor: "TIKA",
@@ -30,7 +30,7 @@ const projects = [
     imageUrl: '/projectsImages/p1_fasadaPotocari/p12.webp'
   }, 
   { 
-    projectId: 'fasada',    
+    projectId: 'p1-fasada-potocari',    
     title: "FASADA POTOČARI",
     location: "Potočari",
     investor: "TIKA",
@@ -39,7 +39,7 @@ const projects = [
     imageUrl: '/projectsImages/p1_fasadaPotocari/p13.webp'
   }, 
   { 
-    projectId: 'fasada',    
+    projectId: 'p1-fasada-potocari',    
     title: "FASADA POTOČARI",
     location: "Potočari",
     investor: "TIKA",
