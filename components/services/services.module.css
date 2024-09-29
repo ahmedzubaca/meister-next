@@ -25,13 +25,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40% 10% 50%; 
-  height: 70vh;    
+  height: 65vh;    
   box-shadow: 0 4px 8px rgba(226, 225, 225, 0.4);
   align-items: center;
   text-align: center;
   padding: 0 5px; 
   box-sizing: border-box;
-  color: rgb(195, 195, 195); 
+  color: rgb(195, 195, 195);
 }
 .icon {  
   width: 45%;

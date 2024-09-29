@@ -75,6 +75,7 @@ export default function Navbar() {
   };  
   
   return(
+    windowSize.width !== undefined && (
     <nav className={`${styles.container} ${hasNavBackground ? styles.containerBackground : ''}`} > 
       {
         windowSize.width <= 900
@@ -147,5 +148,6 @@ export default function Navbar() {
             </HideNavbarAnimationDiv>
         }
       </nav>
+    )
   )
 }

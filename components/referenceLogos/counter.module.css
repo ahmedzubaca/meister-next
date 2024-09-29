@@ -1,4 +1,5 @@
-.textContainer{  
+.textContainer{ 
+  padding-top: 3vh; 
   padding-left: 5vw;
   padding-right: 3vw;
   box-sizing: border-box;  
@@ -16,6 +17,9 @@
 }
 
 @media screen and (min-width: 500px) {
+  .textContainer{ 
+    padding-top: 1vh;
+  }
   .text{  
     font-size: 2.3rem; 
   }
