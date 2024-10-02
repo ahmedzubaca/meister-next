@@ -1,4 +1,4 @@
-import AllProjects from "@/components/Projects/AllProjects";
+import AllProjects from "@/components/projects/AllProjects";
 import { getProjects } from "@/lib/dataFromDb/projectsFromDb";
 
 export const metadata = {

@@ -4,7 +4,9 @@
   height: 100vh;  
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right,rgba(110, 110, 110, 0.7) 36%, rgba(101, 70, 70, 0.7) 36%, rgba(101, 70, 70, 0.7) 64%, rgba(110, 110, 110, 0.7) 64%)   
+  background: linear-gradient(to right,rgba(110, 110, 110, 0.7) 36%, rgba(101, 70, 70, 0.7) 36%, rgba(101, 70, 70, 0.7) 64%, rgba(110, 110, 110, 0.7) 64%);   
+  color: white;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 900px) {

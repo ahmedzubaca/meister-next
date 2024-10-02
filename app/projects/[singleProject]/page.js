@@ -1,4 +1,4 @@
-import ProjectsDetails from '@/components/Projects/ProjectDetails';
+import ProjectsDetails from '@/components/projects/ProjectDetails';
 import PageTransition from '@/lib/animations/pageTransition';
 import { getProjectsDataById } from '@/lib/dataFromDb/projectsFromDb';
 
