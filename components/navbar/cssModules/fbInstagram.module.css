@@ -1,8 +1,8 @@
 .facebook, .instagram { 
-  padding-left: 5%; 
+  padding-left: 10%; 
   color: white;
-  min-width: 20px;
-  min-height: 20px;    
+  min-width: 25px;
+  min-height: 25px;    
 }
 
 @media  screen and (min-width: 900px) { 
