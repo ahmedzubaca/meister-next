@@ -11,7 +11,6 @@ export default function ProjectsDetails({projectDetails}) {
   const [ sliderMob, setSliderMob] = useState(false);
   const [direction, setDirection] = useState(0);
   const touchStartX = useRef(null);
-  const arrowSize = 70;     
   
   const handlePreviousArrow = () => {
     setDirection(-1);

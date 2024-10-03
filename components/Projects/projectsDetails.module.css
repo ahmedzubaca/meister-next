@@ -44,7 +44,7 @@
   font-size: 0.8rem;
   color: white;
   padding-left: 10%;
-}  
+} 
 .imageAndArrowsContainer {           
   display: grid;
   grid-template-columns: 10% 80% 10%;
@@ -64,15 +64,16 @@
   color: transparent;     
 }    
 .imageContainer {
-  display: grid;
-  min-width: 100%;
-  place-content: center center;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 870px;
+  aspect-ratio: 3/2;
+  overflow: hidden;  
 }
 .image {
   width: 100%;
-  max-width: 870px;
-  height: auto;         
+  height: 100%;
+  object-fit: cover;  
 } 
 .circlesContainer{
   display: flex;
