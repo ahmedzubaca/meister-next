@@ -1,5 +1,8 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { useFormState } from 'react-dom';
+import sendEmail from './sendEmail';
+import { emailNotifications } from '@/lib/notificationMessages/emailNotifications'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MoveDownUpAnimation from '@/lib/animations/moveDownAnimation';
@@ -9,64 +12,34 @@ import styles from './contact.module.css';
 
 export default function ContactPage() {
 
-  const initUserInfo = { 
-    firstName: '',   
-    lastName: '',
-    email: '',
-    message: ''
-  }
-  
-  const [isBeingSent, setIsBeingSent] = useState(false)
-  const [userInfo, setUserInfo] = useState(initUserInfo);  
+  const [state, formAction] = useFormState(sendEmail, {message: null})
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
   const formRef = useRef(null);
   
-  
-  
   const clearUserInfo = () => {
     if(formRef.current !== null) {
       formRef.current.reset()
     }    
   }
-  
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if(firstNameRef.current !== null && lastNameRef.current !== null
-      && emailRef.current !== null && messageRef.current !== null) {
-       setUserInfo({
-         ...userInfo,  firstName: firstNameRef.current.value,
-                       lastName: lastNameRef.current.value,
-                       email: emailRef.current.value,
-                       message: messageRef.current.value
-       })     
-    try {
-      setIsBeingSent(true);
-      const response = await fetch('/api/emailApi', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userInfo),
-      });
 
-      if (response.ok) {
-        setIsBeingSent(false);        
-        toast.success('Vaša poruka je uspješno poslana!');
-        clearUserInfo();        
-      } else {
-        setIsBeingSent(false);
-        toast.error('Greška servera. Molimo pokušajte kasnije.');
+  useEffect(() => {
+    if(state.message !== null) { 
+      if (state.message === emailNotifications.invalidInput) {             
+        toast.error(emailNotifications.invalidInput);              
+      } 
+      if (state.message === emailNotifications.emailSent) {
+        toast.success(emailNotifications.emailSent);
+        clearUserInfo()              
       }
-      } catch (error) {
-        toast.error('Greška servera. Molimo pokušajte kasnije.');
+      if (state.message === emailNotifications.serverError) {             
+        toast.error(emailNotifications.serverError);
+        clearUserInfo()              
       }
-    } else {
-      toast.error('Molimo popunite sva polja.')
     }
-  }; 
+  }, [state])
  
   return(
     <PageTransition>       
@@ -95,7 +68,7 @@ export default function ContactPage() {
             ></iframe>           
           </div> 
           <ContactAnimation className={styles.formContainer} isLeft={false}>            
-            <form onSubmit={handleSubmit} ref={formRef}>          
+            <form action={formAction} ref={formRef}>          
               <div className={styles.userDataContainer}>
                 <div className={styles.contactNote}> Kontaktirajte nas: </div>                      
                 <input type='text' id='firstName' name='firstName' required ref={firstNameRef}
@@ -116,12 +89,10 @@ export default function ContactPage() {
                           ref={messageRef}
                           required                    
                 >
-                </textarea>            
-                <button className={styles.submitButton}                
-                        disabled={isBeingSent}
-                >
-                  {isBeingSent ? 'Slanje poruke je u toku...' : 'Pošalji'}        
-                </button>            
+                </textarea> 
+                <button className={styles.submitButton}>
+                  Pošalji 
+                </button>
               </div>          
             </form>
           </ContactAnimation>
