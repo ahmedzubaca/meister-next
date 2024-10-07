@@ -3,11 +3,11 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 90px;
+  height: 80px;
   flex-direction: row;
   align-items: center;  
   z-index: 1000;  
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 .containerBackground {
   background-color: rgb(7, 7, 7);
@@ -17,8 +17,7 @@
 .logoMenueMediaContainer { 
   display: flex;  
   align-items: center;
-  padding-top: 25px;
-   
+  padding-top: 25px;   
 }
 .menuContainer{
   width: 20%;
