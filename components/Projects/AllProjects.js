@@ -22,6 +22,8 @@ export default function AllProjects ({projectsData}) {
       sessionStorage.removeItem('scrollPosition');
     }    
   }, []);
+
+  console.log('All projects');
   
   return(       
     <div className={`${styles.pageContainer} ${ isLandscape ? styles.pageContainerLandscape : null}`}>
