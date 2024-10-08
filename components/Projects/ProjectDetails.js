@@ -66,6 +66,8 @@ export default function ProjectsDetails({projectDetails}) {
       window.removeEventListener('touchend', handleTouchEnd);
     };    
   }, [sliderMob]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  console.log('Project details component');
   
   return ( 
     <div className={styles.backgroundProjects}>
