@@ -67,8 +67,6 @@ export default function ProjectsDetails({projectDetails}) {
     };    
   }, [sliderMob]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  console.log('Project details component');
-  
   return ( 
     <div className={styles.backgroundProjects}>
       <div className={styles.pageContainer}>

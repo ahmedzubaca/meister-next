@@ -13,8 +13,6 @@ export const imageVideoRender = (projectImg, imgStyle, direction, slideIndex) =>
   };  
   const fileType = getFileType(projectImg);
 
-  console.log('imageVideoRender')
-
   return( 
     
     fileType === 'image'

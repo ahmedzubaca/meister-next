@@ -23,8 +23,6 @@ export default function AllProjects ({projectsData}) {
     }    
   }, []);
 
-  console.log('All projects');
-  
   return(       
     <div className={`${styles.pageContainer} ${ isLandscape ? styles.pageContainerLandscape : null}`}>
       <MoveDownUpAnimation className={`${styles.title} ${isLandscape ? styles.titleLandscape : '' }`} > 
