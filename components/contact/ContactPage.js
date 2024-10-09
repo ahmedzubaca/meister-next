@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useFormState } from 'react-dom';
 import sendEmail from './sendEmail';
 import { emailNotifications } from '@/lib/notificationMessages/emailNotifications'

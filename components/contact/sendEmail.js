@@ -7,28 +7,25 @@ export default async function sendEmail(prevState, formData) {
 
   function isInvalidInput(text) {
     return(!text || text === null || text === undefined || text.trim() === '');    
-  }
-
-  const userData = {
-    firstName: formData.get('firstName'),
-    lastName: formData.get('lastName'),
-    email: formData.get('email'),
-    message: formData.get('message')
-  }; 
+  };
+  
+  const firstName = formData.get('firstName');
+  const lastName = formData.get('lastName');
+  const email = formData.get('email');
+  const message = formData.get('message');
   
   if(
-    isInvalidInput(userData.firstName) ||
-    isInvalidInput(userData.lastName) ||
-    isInvalidInput(userData.email) ||    
-    isInvalidInput(userData.message) ||
-    !userData.email.includes('@')
+    isInvalidInput(firstName) ||
+    isInvalidInput(lastName) ||
+    isInvalidInput(email) ||    
+    isInvalidInput(message) ||
+    !email.includes('@')
   ) {
       return {
         message: emailNotifications.invalidInput
       }
   };
   
-  const {firstName, lastName, email, message} = userData;      
   const msg = {
     to: process.env.EMAIL,
     from: process.env.EMAIL,

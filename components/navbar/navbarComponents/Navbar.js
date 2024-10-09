@@ -87,7 +87,7 @@ export default function Navbar() {
             </div>
             <div className={styles.logoContainer}>
             <Link href='/'>
-              <Image className={styles.logo} src={meisterLogo} alt="logo"
+              <Image className={styles.logo} src={meisterLogo} alt="logo" priority
                 onClick={() => handleMeisterLogoClick()}
               />
             </Link> 

@@ -11,7 +11,6 @@ export default function ProjectItem({ coverImage,
                                     }) {
 
   const [isHover, setIsHover] = useState(false);
-  const routeSlug = projectId.split('-').slice(1).join('-')                                     
   
   return( 
     <div  className={styles.overallContainer}> 
