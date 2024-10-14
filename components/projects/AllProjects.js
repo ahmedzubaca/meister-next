@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import ProjectItem from './ProjectItem';
 import useWindowSize from '@/components/navbar/helper/useWindowSize';
 import MoveDownUpAnimation from '@/lib/animations/moveDownAnimation';

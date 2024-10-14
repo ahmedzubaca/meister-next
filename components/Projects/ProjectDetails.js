@@ -9,7 +9,7 @@ export default function ProjectsDetails({projectDetails}) {
 
   const [ slideIndex, setSlideIndex ] = useState(0);
   const [ sliderMob, setSliderMob] = useState(false);
-  const [direction, setDirection] = useState(0);
+  const [direction, setDirection] = useState(0); 
   const touchStartX = useRef(null);
   
   const handlePreviousArrow = () => {

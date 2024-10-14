@@ -1,8 +1,10 @@
 'use client';
 import { useRef, useEffect } from 'react';
 import { useFormState } from 'react-dom';
+import {handleFormFieldsValidation, handleInput, handleBlur} from './formFieldsValidation';
 import sendEmail from './sendEmail';
 import { emailNotifications } from '@/lib/notificationMessages/emailNotifications'
+import SubmitButton from './SubmitButton';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MoveDownUpAnimation from '@/lib/animations/moveDownAnimation';
@@ -40,7 +42,7 @@ export default function ContactPage() {
       }
     }
   }, [state])
- 
+
   return(
     <PageTransition>       
       <div className={styles.pageContainer} >
@@ -71,28 +73,47 @@ export default function ContactPage() {
             <form action={formAction} ref={formRef}>          
               <div className={styles.userDataContainer}>
                 <div className={styles.contactNote}> Kontaktirajte nas: </div>                      
-                <input type='text' id='firstName' name='firstName' required ref={firstNameRef}
-                        placeholder='Ime (obavezno)'                   
+                <input type='text' 
+                  id='firstName' 
+                  name='firstName'
+                  required 
+                  onInvalid={handleFormFieldsValidation}
+                  onInput={handleInput}
+                  ref={firstNameRef}
+                  placeholder='Ime (obavezno)'                   
                 />            
-                <input type='text' id='lastName' name='lastName' required ref={lastNameRef}
-                      placeholder='Prezime (obavezno)'                  
+                <input type='text' 
+                  id='lastName' 
+                  name='lastName'
+                  required 
+                  onInvalid={handleFormFieldsValidation}
+                  onInput={handleInput}
+                  ref={lastNameRef}
+                  placeholder='Prezime (obavezno)'                  
                 />
-                <input type='email' id='email' required ref={emailRef} 
-                      name='email' placeholder='E-mail (obavezno)'                   
+                <input type='text'
+                  id='email'
+                  name='email'
+                  onInvalid={handleFormFieldsValidation}
+                  onInput={handleInput}
+                  required 
+                  onBlur={handleBlur}                 
+                  ref={emailRef} 
+                  placeholder='E-mail (obavezno)'                   
                 />            
               </div> 
               <div className={styles.messageButtonContainer}>         
                 <textarea className={styles.messageContainer}
-                          name='message' 
-                          id='message'
-                          placeholder='Vaša poruka...'
-                          ref={messageRef}
-                          required                    
+                  name='message' 
+                  id='message'
+                  placeholder='Vaša poruka...'
+                  ref={messageRef}
+                  required
+                  onInvalid={handleFormFieldsValidation}
+                  onInput={handleInput}
                 >
                 </textarea> 
-                <button className={styles.submitButton}>
-                  Pošalji 
-                </button>
+                <SubmitButton btnStyle={styles.submitButton}/>
               </div>          
             </form>
           </ContactAnimation>

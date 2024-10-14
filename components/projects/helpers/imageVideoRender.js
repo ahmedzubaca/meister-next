@@ -1,37 +1,29 @@
-import { ImageLoader } from "./ImageLoader";
+import Image from "next/image";
 import ImageTransition from "@/lib/animations/imageTransition";
 
 export const imageVideoRender = (projectImg, imgStyle, direction, slideIndex) => {
-  const getFileType = (filename) => {
-    const extension = filename.split('.').pop();
-    if (['webp','jpg', 'jpeg', 'png', 'gif'].includes(extension)) {
-      return 'image';
-    } else if (['mp4', 'webm', 'ogg'].includes(extension)) {
-      return 'video';
-    }
-    return null;
-  };  
-  const fileType = getFileType(projectImg);
+  
+  const isVideo = projectImg.includes('video');
 
-  return( 
-    
-    fileType === 'image'
-    ?
+  return(
     <ImageTransition direction={direction} index={slideIndex} >
-      <ImageLoader src={projectImg}
-        imgStyle={imgStyle} 
-      /> 
+      {
+        !isVideo
+        ?
+          <Image            
+            src={projectImg}
+            alt='slika'         
+            width={2048}
+            height={1365}
+            priority
+            className={imgStyle}        
+          />  
+        : 
+          <video controls autoPlay className={imgStyle} >
+              <source src={projectImg} type={`video/${projectImg.split('.').pop()}`}  />
+          Your browser does not support the video tag.
+          </video>
+      } 
     </ImageTransition>
-    : 
-      fileType === 'video' 
-      ?  
-      <ImageTransition direction={direction} index={slideIndex} >    
-        <video controls autoPlay className={imgStyle} >
-            <source src={projectImg} type={`video/${projectImg.split('.').pop()}`}  />
-        Your browser does not support the video tag.
-        </video>
-      </ImageTransition>
-        
-      : null 
   )
 };
