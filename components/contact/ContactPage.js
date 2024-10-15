@@ -15,10 +15,6 @@ import styles from './contact.module.css';
 export default function ContactPage() {
 
   const [state, formAction] = useFormState(sendEmail, {message: null})
-  const firstNameRef = useRef(null);
-  const lastNameRef = useRef(null);
-  const emailRef = useRef(null);
-  const messageRef = useRef(null);
   const formRef = useRef(null);
   
   const clearUserInfo = () => {
@@ -79,7 +75,6 @@ export default function ContactPage() {
                   required 
                   onInvalid={handleFormFieldsValidation}
                   onInput={handleInput}
-                  ref={firstNameRef}
                   placeholder='Ime (obavezno)'                   
                 />            
                 <input type='text' 
@@ -88,7 +83,6 @@ export default function ContactPage() {
                   required 
                   onInvalid={handleFormFieldsValidation}
                   onInput={handleInput}
-                  ref={lastNameRef}
                   placeholder='Prezime (obavezno)'                  
                 />
                 <input type='text'
@@ -98,7 +92,6 @@ export default function ContactPage() {
                   onInput={handleInput}
                   required 
                   onBlur={handleBlur}                 
-                  ref={emailRef} 
                   placeholder='E-mail (obavezno)'                   
                 />            
               </div> 
@@ -107,7 +100,6 @@ export default function ContactPage() {
                   name='message' 
                   id='message'
                   placeholder='Vaša poruka...'
-                  ref={messageRef}
                   required
                   onInvalid={handleFormFieldsValidation}
                   onInput={handleInput}

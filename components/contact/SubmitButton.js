@@ -6,7 +6,7 @@ export default function SubmitButton({btnStyle}) {
   const pending = data.pending;
 
   return(
-    <button className={btnStyle} dissabled={pending}>
+    <button className={btnStyle} disabled={pending}>
       {pending ? 'Slanje poruke je u toku' : 'Pošalji'} 
     </button>
   );
