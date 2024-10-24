@@ -1,5 +1,5 @@
 import AllProjects from "@/components/projects/AllProjects";
-import { getProjects } from "@/lib/dataFromDb/projectsFromDb";
+import { getProjects } from "@/database/dataFromDb/projectsFromDb";
 
 export const metadata = {
   title: 'Projekti',

@@ -27,19 +27,13 @@ export default function ProjectItem({ coverImage,
             {
               isHover
               ?  
-                <div className={styles.learnMore}
-                  onMouseEnter={() => setIsHover(true)}
-                  onMouseLeave={() => setIsHover(false)}
-                >
+                <div className={styles.learnMore}>
                   SAZNAJ VIŠE  
                 </div>            
               : null
               }
           </div>
-          <div className={`${styles.projectInfo} ${isHover ? styles.projectInfoHovered : ''}`} 
-              onMouseEnter={() => setIsHover(true)}
-              onMouseLeave={() => setIsHover(false)}              
-          >           
+          <div className={`${styles.projectInfo} ${isHover ? styles.projectInfoHovered : ''}`}>           
             <p className={styles.projectTitle}> {title} </p>
             <p className={styles.projectSize}> {size} m<sup>2</sup>  </p>
           </div>

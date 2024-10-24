@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Counter from './Counter';
 import ImagesEnterAnimation from '@/lib/animations/imagesEnterAnimation';
 import styles from './referenceLogos.module.css';
-import { getLogos } from '@/lib/dataFromDb/referenceLogodFromDb';
+import { getLogos } from '@/database/dataFromDb/referenceLogosFromDb';
 //import {referenceLogosData} from './referenceLogosData';
 
 function ReferenceLogos() {
